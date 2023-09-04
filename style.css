@@ -1,0 +1,270 @@
+*{
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+}
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    background-color: #212121;
+    position: sticky;
+    top: 0;
+}
+.left-bar,.right-bar{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.middle-bar{
+    width: 50vw;
+  margin: auto;
+  display: flex;
+  color: white;
+  border-radius: 2px;
+}
+#input-value{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    flex-grow: 1;
+    border: none;
+    background-color: #121212;
+    padding: 10px 20px;
+    color: white;
+}
+#search-button{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-right: 10px;
+    border: none;
+    background-color: #303030;
+    color: white;
+    padding: 0 10px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+#search-button:hover{
+    background-color: #8a8787;
+}
+
+.left-nav-bar{
+    width: 20%;
+    position: fixed;
+    overflow-y: scroll;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding-bottom: 100px;
+    background-color: #212121;
+    /* border: solid yellow; */
+  
+
+}
+::-webkit-scrollbar{
+    display: none;
+}
+ul{
+    width: 95%;
+   
+}
+.sec-1{
+    white-space: nowrap;
+}
+.sec-1 li a{
+    text-decoration: none;
+    color: white;
+}
+.sec-1 li a img{
+    margin-right: 20px;
+}
+li{
+    width: 85%;
+    list-style: none;
+    padding: 10px;
+    margin-bottom: 3px;
+    padding-left: 30px;
+}
+
+.home{
+    background-color: 
+    #303030;
+    width: 85%;
+}
+.home a{
+    background-color: #303030;
+}
+.home img{
+    background-color: #303030;
+}
+.border-bottom{
+    margin-top:10px;
+    border-bottom:1px solid #303030;
+}
+h5{
+    color: white;
+}
+.usefull-links a{
+    display: block;
+}
+.home-section{
+    display: flex;
+    justify-content: space-between;
+}
+.right-section{
+    width: 80%;
+    height: 100vh;
+    right: 0;
+    background-color: black;
+    margin-left: auto;
+    overflow-y: scroll;
+}
+.frequent-search{
+    /* display: flex;
+    gap: 25px; */
+    padding: 10px 10px;
+    overflow-x: scroll;
+    white-space: nowrap;
+    background-color:#212121;
+    border-top: 1px solid #615d5d ;
+    position: fixed;
+}
+.catogory{
+    margin: 5px;
+    width: 80px;
+    padding: 10px 10px;
+    border-radius: 20px;
+    background-color: #212121;
+    color: white;
+    font-size: 500;
+    border: solid 1px #615d5d;
+    cursor: pointer;
+}
+.all{
+    background-color: white;;
+    color: black;
+    width: 50px;
+}
+.videos-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 50px 10px;
+}
+
+.video {
+    height: 350px;
+    display: flex;
+    flex-flow: column;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  .video:hover {
+    transform: scale(1.01);
+  }
+  .thumbnail {
+    width: 100%;
+    height: 50%;
+  }
+  
+  .bottom-container {
+    display: flex;
+    gap: 10px;
+    padding: 5px 0;
+  }
+  .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .gray-text {
+    color: gray;
+    font-size: 12px;
+  }
+  .title-container {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+  }
+  
+  .title {
+    color: white;
+  }
+  .comments,.counts{
+    color: white;
+  }
+  .author-profile{
+    border-radius: 50%;
+    margin: 20px;
+  }
+  .prof{
+    display: flex;
+    align-items: center;
+  }
+  .opinion{
+    margin-left: 88px;
+    /* border: solid red; */
+    height: 50px;
+    overflow-y: scroll;
+  }
+  #vedio-container{
+    width: 100%;
+  }
+  .vedio-comment{
+    width: 75vw;
+    border: solid red;
+    margin: auto;
+  }
+  .counts{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+  }
+  .like-count{
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    align-items: center;
+  }
+  .like{
+    display: flex;;
+    align-items: center;
+  }
+  .like img{
+    margin-right: 10px;
+  }
+  .info{
+    border-bottom: 0.5px solid rgb(49, 47, 47);
+  }
+  .c{
+    color: white;
+    margin-top: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .sub{
+    display: flex;
+    justify-content: space-between;
+  }
+  .name{
+    display: flex;
+    gap: 15px;
+  }
+  .sub-button{
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border: none;
+  }
+  .sub-count{
+    white-space: pre;
+  }
+  .des{
+   padding: 30px 40px;
+
+  }
