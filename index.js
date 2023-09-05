@@ -1,4 +1,4 @@
-const apiKey = "AIzaSyCTfxCeldOBTKimyUJhHXYAe-W0F2U2z3I"
+const apiKey = "AIzaSyBQN1uvFvfqs53r9K11loGESyjmNz9_AYg"
 const url = "https://www.googleapis.com/youtube/v3";
 
 const searchInput = document.getElementById("input-value");
@@ -45,7 +45,7 @@ function calculateTheTimeGap(publishTime) {
 function vedioDetails(vedioId){
   console.log(vedioId);
   document.cookie = `id=${vedioId}; path=/vedio-dtails.html`;
-  window.location.href = "http://127.0.0.1:5500/vedio-dtails.html";
+  window.location.href = "vedio-dtails.html";
 
 }
 async function renderVedios(result){
@@ -89,6 +89,7 @@ async function getChanelLogo(channelId){
     try{
         const response = await fetch(endpoint);
         const result = await response.json();
+        console.log(result);
         return result.items[0].snippet.thumbnails.high.url;
     }
     catch(error){
