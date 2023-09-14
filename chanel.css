@@ -1,0 +1,368 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+body,html{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+}
+.nav-bar{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 20px;
+    background-color: rgb(26, 25, 25);
+}
+.left-bar,.middle-bar,.right-bar{
+    display: flex;
+    align-items: center;
+}
+.left-bar,.right-bar{
+    gap: 10px;
+}
+.middle-bar{
+    width: 50%;
+}
+.middle-bar input{
+    width: 90%;
+    padding: 10px;
+    outline: none;
+    border:none;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.middle-bar button{
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border: none;
+    background-color: rgb(78, 77, 77);
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+.middle-bar button:hover{
+    background-color: rgb(172, 166, 166);
+}
+.chanel-info{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.cover-image{
+    width: 100%;
+    height: auto;
+}
+.cover-image img{
+    height: auto;
+    width: 100%;
+  
+    max-width:100%;
+    top: 0;
+    left: 0;
+}
+.profile{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background-color: #181818;
+    
+}
+.photo-name{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-name{
+    font-size: 24px;
+}
+.sub-count{
+    color: rgb(158, 137, 137);
+}
+.sub-button button{
+    background-color: red;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sub-button button:hover{
+    background-color: rgb(221, 107, 107);
+}
+.mini-nav{
+    background-color: #181818;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    align-items: center;
+}
+.uploads a{
+    text-decoration: none;
+    font-size: 15px;
+    white-space: nowrap;
+}
+.uploads{
+    display: flex;
+    gap: 100px;
+    overflow-x: scroll;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.main-video{
+    display: flex;
+    gap: 20px;
+    padding:0 40px;
+    padding-top: 20px;
+    width: 100%;
+    position: relative;
+    padding-bottom: 30px;
+    border-bottom: 1px solid grey;
+}
+.latest-video img{
+   
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+.video-des{
+    width: 400px;
+}
+.title{
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.views{
+    font-size: 13px;
+    color: #948b8b;
+}
+.des{
+    font-size: 14px;
+} 
+.own-playlist{
+    display: flex;
+    gap: 5px;
+    margin:0 40px;
+    padding-top: 20px;
+    overflow-x: scroll;
+}
+.vedio-card{
+    width: 214px;
+    height: 199px;
+    white-space: nowrap;
+}
+.image-tag img{
+    width: 100%;
+    height: auto;
+
+}
+
+@media screen and (max-width: 768px) {
+    .middle-bar {
+        width: 100%;
+    
+    }
+
+    
+    .middle-bar button {
+        width: 100%; 
+    }
+
+    .left-bar, .right-bar {
+        display: none; 
+    }
+
+    .chanel-info {
+        height: auto; 
+    }
+
+    .cover-image img {
+        width: 100%; 
+        height: auto; 
+ 
+        left: auto;
+        top: auto; 
+    }
+    .mini-nav{
+        width: 100%;
+    }
+    .uploads{
+        gap: auto;
+    }
+    .uploads a{
+        font-size: 14px;
+    }
+    .main-video{
+        width: 100%;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+    .user-name{
+        font-size: 20px;
+    }
+    
+}  
+
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.nav-bar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(26, 25, 25);
+    align-items: center;
+}
+
+.left-bar, .middle-bar, .right-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.middle-bar {
+    flex: 1;
+}
+
+.middle-bar input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.middle-bar button {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border: none;
+    background-color: rgb(78, 77, 77);
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+.middle-bar button:hover {
+    background-color: rgb(172, 166, 166);
+}
+
+.chanel-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.cover-image {
+    width: 100%;
+    height: auto;
+}
+
+.cover-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #181818;
+}
+
+.photo-name {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-name {
+    font-size: 24px;
+    text-align: center;
+}
+
+.sub-count {
+    color: rgb(158, 137, 137);
+    text-align: center;
+}
+
+.sub-button button {
+    background-color: red;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.sub-button button:hover {
+    background-color: rgb(221, 107, 107);
+}
+
+.mini-nav {
+    background-color: #181818;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.uploads a {
+    text-decoration: none;
+    font-size: 15px;
+    white-space: nowrap;
+    padding: 0 15px; /* Add padding to links for better touch interaction on mobile devices */
+/* } */
+
+/* .uploads::-webkit-scrollbar {
+    display: none;
+}
+
+.main-video {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid grey;
+}
+
+.latest-video img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.video-des {
+    width: 100%;
+    font-size: 16px;
+} */ 

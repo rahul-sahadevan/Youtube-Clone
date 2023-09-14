@@ -1,9 +1,33 @@
-const apiKey = "AIzaSyBQN1uvFvfqs53r9K11loGESyjmNz9_AYg"
+const apiKey = "AIzaSyDUYgsLctSP1U97FyMMOtmeOFrDaELHZ7Q"
 const url = "https://www.googleapis.com/youtube/v3";
 
 const searchInput = document.getElementById("input-value");
 const searchbutton = document.getElementById("search-button");
+const burger = document.getElementById("burger");
+const leftBar = document.querySelector(".left-nav-bar");
+const frequentSearch = document.querySelector(".frequent-search");
 const homeDiv = document.getElementById("container");
+
+function toggleMenu(){
+  if(leftBar.style.display === "none"){
+    frequentSearch.style.marginLeft = "20%"
+    homeDiv.style.marginLeft = "20%"
+    leftBar.style.width = "20%"
+    leftBar.style.display = "block";
+
+  }
+  else{
+    frequentSearch.style.width = "100%";
+    frequentSearch.style.marginLeft = "0%";
+    homeDiv.style.marginLeft = "0%";
+    leftBar.style.display = "none";
+    
+  }
+}
+burger.addEventListener("click",() =>{
+  toggleMenu();
+
+})
 function getViewcount(count){
     if(count < 1000){
         return count;
@@ -42,10 +66,10 @@ function calculateTheTimeGap(publishTime) {
   
     return `${Math.ceil(secondsGap / secondsPerYear)} years ago`;
   }
-function vedioDetails(vedioId){
-  console.log(vedioId);
-  document.cookie = `id=${vedioId}; path=/vedio-dtails.html`;
-  window.location.href = "vedio-dtails.html";
+  function vedioDetails(vedioId){
+    document.cookie = `id=${vedioId}; path=/vedio-dtails.html`;
+  
+    window.location.href = "vedio-dtails.html";
 
 }
 async function renderVedios(result){
@@ -56,7 +80,7 @@ async function renderVedios(result){
         videoDiv.className = "video";
         videoDiv.innerHTML = 
         `<img
-        src="${element.snippet.thumbnails.medium.url}"
+        src="${element.snippet.thumbnails.high.url}"
         class="thumbnail"
         alt="thumbnail"
       />
@@ -135,8 +159,10 @@ async function getVedios(searchValue){
    }
 
 }
-searchbutton.addEventListener("click", () =>{
-    seachValue  = searchInput.value;
+searchbutton.addEventListener("click", (e) =>{
+  e.preventDefault();
+  seachValue  = searchInput.value;
+  localStorage.setItem("search",seachValue);
     getVedios(seachValue);
 })
-window.onload(getVedios(""));
+// window.onload(getVedios(""));
