@@ -165,4 +165,4 @@ searchbutton.addEventListener("click", (e) =>{
   localStorage.setItem("search",seachValue);
     getVedios(seachValue);
 })
-// window.onload(getVedios(""));
+window.onload(getVedios(""));
