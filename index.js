@@ -135,6 +135,18 @@ async function getStatistics(vedioId){
     
 }
 
+async fuction videoRating(){
+  const endpint = 'https://www.googleapis.com/youtube/v3/videos/getRating';
+  try{
+      const response = await fetch(endpint);
+      const result = await response.json();
+      console.log(result)
+  }
+  catch(error){
+    alert(error)
+  }
+}
+
 async function getVedios(searchValue){
     const endpoint = `${url}/search?key=${apiKey}&q=${searchValue}&part=snippet&maxResults=20`;
     try{
