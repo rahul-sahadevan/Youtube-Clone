@@ -146,7 +146,7 @@ async fuction videoRating(){
     alert(error)
   }
 }
-
+videoRating()
 async function getVedios(searchValue){
     const endpoint = `${url}/search?key=${apiKey}&q=${searchValue}&part=snippet&maxResults=20`;
     try{
