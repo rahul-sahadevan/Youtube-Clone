@@ -135,54 +135,54 @@ async function getStatistics(vedioId){
     
 }
 
-async fuction videoRating(){
-  const endpint = 'https://www.googleapis.com/youtube/v3/videos/getRating';
-  try{
-      const response = await fetch(endpint);
-      const result = await response.json();
-      console.log(result)
-      for(let i =0;i<result.items.length;i++){
-        const vedioId = result.items[i].id.videoId;
-        const channelId = result.items[i].snippet.channelId;
+// async function videoRating(){
+//   const endpint = 'https://www.googleapis.com/youtube/v3/videos/getRating';
+//   try{
+//       const response = await fetch(endpint);
+//       const result = await response.json();
+//       console.log(result)
+//       for(let i =0;i<result.items.length;i++){
+//         const vedioId = result.items[i].id.videoId;
+//         const channelId = result.items[i].snippet.channelId;
 
-        let statistics = await getStatistics(vedioId);
-        let channelLogo = await getChanelLogo(channelId);
+//         let statistics = await getStatistics(vedioId);
+//         let channelLogo = await getChanelLogo(channelId);
 
-        result.items[i].statistics = statistics;
-        result.items[i].channelLogo = channelLogo;
+//         result.items[i].statistics = statistics;
+//         result.items[i].channelLogo = channelLogo;
 
-    }
-    renderVedios(result.items)
-  }
-  catch(error){
-    alert(error)
-  }
-}
-videoRating()
-// async function getVedios(searchValue){
-//     const endpoint = `${url}/search?key=${apiKey}&q=${searchValue}&part=snippet&maxResults=20`;
-//     try{
-//         const response = await fetch(endpoint);
-//         const result = await response.json();
-//         console.log(result);
-//         for(let i =0;i<result.items.length;i++){
-//             const vedioId = result.items[i].id.videoId;
-//             const channelId = result.items[i].snippet.channelId;
-
-//             let statistics = await getStatistics(vedioId);
-//             let channelLogo = await getChanelLogo(channelId);
-
-//             result.items[i].statistics = statistics;
-//             result.items[i].channelLogo = channelLogo;
-
-//         }
-//         renderVedios(result.items);
 //     }
-//    catch(error){
-//     console.log(error);
-//    }
-
+//     renderVedios(result.items)
+//   }
+//   catch(error){
+//     alert(error)
+//   }
 // }
+// videoRating()
+async function getVedios(searchValue){
+    const endpoint = `${url}/search?key=${apiKey}&q=${searchValue}&part=snippet&maxResults=20`;
+    try{
+        const response = await fetch(endpoint);
+        const result = await response.json();
+        console.log(result);
+        for(let i =0;i<result.items.length;i++){
+            const vedioId = result.items[i].id.videoId;
+            const channelId = result.items[i].snippet.channelId;
+
+            let statistics = await getStatistics(vedioId);
+            let channelLogo = await getChanelLogo(channelId);
+
+            result.items[i].statistics = statistics;
+            result.items[i].channelLogo = channelLogo;
+
+        }
+        renderVedios(result.items);
+    }
+   catch(error){
+    console.log(error);
+   }
+
+}
 searchbutton.addEventListener("click", (e) =>{
   e.preventDefault();
   seachValue  = searchInput.value;
